@@ -549,7 +549,7 @@ h1 {
 
 
 
-/* Formulario de Contacto */
+/* Estilos generales */
 .formcontato {
     padding: 40px;
     background-color: #fff;
@@ -557,6 +557,7 @@ h1 {
 
 .formcontato__contacto {
     display: flex;
+    flex-direction: row; /* Mantiene los elementos en línea en pantallas grandes */
 }
 
 .formcontato__text {
@@ -578,7 +579,7 @@ h1 {
 .formcontato__botao {
     background-color: #007ACC;
     color: white;
-    padding: 20px 20px;
+    padding: 15px 20px; /* Ajustado para que no sea demasiado grande en pantallas pequeñas */
     border: none;
     cursor: pointer;
     border-radius: 5px;
@@ -586,6 +587,55 @@ h1 {
 
 .formcontato__botao:hover {
     background-color: #005a8c;
+}
+
+/* Estilos para pantallas de tablet */
+@media (max-width: 768px) {
+    .formcontato {
+        padding: 20px; /* Reduce el padding para ajustarse mejor en tablet */
+    }
+
+    .formcontato__contacto {
+        flex-direction: column; /* Cambia la dirección a columna para que los elementos estén apilados */
+    }
+
+    .formcontato__text {
+        margin-left: 0; /* Elimina el margen lateral para pantallas más pequeñas */
+        margin-top: 20px; /* Añade margen superior entre la imagen y el texto */
+    }
+
+    .formcontato__input, .formcontato__textarea {
+        padding: 12px; /* Aumenta ligeramente el padding para hacer más cómodo escribir en tablets */
+    }
+
+    .formcontato__botao {
+        padding: 15px 20px; /* Mantiene un buen tamaño para tablets */
+    }
+}
+
+/* Estilos para pantallas móviles */
+@media (max-width: 480px) {
+    .formcontato {
+        padding: 15px; /* Reduce aún más el padding en móviles */
+    }
+
+    .formcontato__contacto {
+        flex-direction: column; /* Asegura que los elementos estén apilados en móviles */
+    }
+
+    .formcontato__text {
+        margin-left: 0; /* Elimina márgenes innecesarios en pantallas pequeñas */
+        margin-top: 15px; /* Un poco de margen entre la imagen y el texto */
+    }
+
+    .formcontato__input, .formcontato__textarea {
+        padding: 10px; /* Reduce el padding para que quepa mejor en pantallas más pequeñas */
+    }
+
+    .formcontato__botao {
+        width: 100%; /* Botón a todo el ancho en móviles para facilitar el acceso */
+        padding: 15px; /* Tamaño cómodo para tocar en pantallas táctiles */
+    }
 }
 
 /* Footer */
