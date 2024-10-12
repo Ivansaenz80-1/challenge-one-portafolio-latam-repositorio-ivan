@@ -1,110 +1,597 @@
-/* Este repositório base fué creado para ayudarte en caso que no sepas como comenzar, recuerda que el portafolio es tu carta de presentación y debes darle tu cara, por eso te invitamos a personalizarlo según tu estilo y preferencias no te limites apenas al layout propuesto en figma  
-*/
-:root {
-    --color-de-fondo: #F5F5F5;
-    --color-de-fondo-menu: #ffffff;
-    --color-de-link: #000000;
+/* General Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 
 body {
-    background-color: var(--color-de-fondo);
     font-family: 'Raleway', sans-serif;
-    margin: 0;
-    box-sizing: border-box;
-    padding: 0;
-    line-height: 1.6;
+    color: #333;
+    background-color: #f4f4f4;
 }
 
-ol, ul, li {
-    list-style: none;
+h1, h2, h3 {
+    color: #222;
 }
 
-a {
-    text-decoration: none;
-    color: var(--color-de-link);
+h1 {
+    font-size: 48px;
+    font-weight: bold;
+    margin-bottom: 20px;
 }
 
-/* ------------------------------ Sección Menú -------------------------------*/
+/* Header / Menú */
 .cabecera {
     display: flex;
-    flex-direction: column;
     align-items: center;
-    padding: 1rem;
-    background-color: var(--color-de-fondo-menu);
+    justify-content: space-between;
+    background-color: #007bff;
+    color: white;
+    padding: 20px;
 }
 
 .cabecera__logo {
-    max-width: 80px; /* Ajuste para pantallas pequeñas */
+    width: 50px;
+    height: 50px;
 }
 
 .cabecera__titulo {
-    font-size: 1.2rem;
-    text-align: center;
+    font-size: 24px;
+}
+
+.navegacion {
+    display: flex;
 }
 
 .navegacion__lista {
-    display: none;
+    display: flex;
+    list-style: none;
+    gap: 20px;
 }
 
 .navegacion__elemento a {
-    font-size: 0.9rem;
+    color: white;
+    text-decoration: none;
+    font-size: 16px;
+    transition: color 0.3s, background-color 0.3s;
+    padding: 5px 10px; /* Espaciado adicional para el efecto de hover */
 }
-/* ------------------------------ Sección Presentación ------------------------------*/
+
+.navegacion__elemento a:hover {
+    background-color: orange; /* Resaltado en naranja al pasar el mouse */
+    color: white; /* Aseguramos que el texto siga siendo blanco */
+}
+
+/* Sección Presentación */
+.presentacion {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 50px;
+    gap: 20px;
+    padding: 20px;
+}
+
+.presentacion__contenedor {
+    flex: 1;
+    padding-right: 20px;
+}
+
+.presentacion__titulo {
+    font-size: 48px;
+    font-weight: bold;
+    color: #222;
+    margin-bottom: 10px;
+}
+
+.presentacion__subtitulo {
+    font-size: 18px;
+    color: #666;
+    margin-bottom: 30px;
+}
+
+.redes {
+    display: flex;
+    gap: 15px;
+    margin-top: 20px;
+    list-style: none;
+}
+
+.redes__img {
+    display: flex;
+    align-items: center;
+    font-size: 16px;
+    color: #007bff;
+}
+
+.redes__img:hover {
+    color: #0056b3;
+}
+
+.redes__img::after {
+    content: '↗';
+    font-size: 12px;
+    margin-left: 5px;
+    color: inherit;
+}
+
+/* Ajuste para la foto de perfil alineada a la derecha */
+.presentacion__foto {
+    width: 300px;
+    height: 300px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 5px solid #007bff;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    order: 2; /* Ordenamos la imagen al lado derecho */
+}
+
+/* Sección Sobre mí */
+.sobre-mi {
+    background-color: #fff;
+    padding: 50px 20px;
+    text-align: left; /* Alineación a la izquierda */
+}
+
+.sobre-mi__titulo {
+    font-size: 36px;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+
+.sobre-mi__texto {
+    font-size: 18px;
+    color: #666;
+    line-height: 1.6;
+    max-width: 800px;
+    margin-bottom: 30px;
+  }
+
+.sobre-mi__firma {
+    width: 150px;
+    margin-top: 30px;
+}
+
+/* Sección Habilidades */
+.habilidades {
+    background-color: #f9f9f9;
+    padding: 50px 20px;
+    text-align: center;
+}
+
+.habilidades__titulo {
+    font-size: 36px;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+
+.habilidades__lista {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 30px;
+    width: 100%;
+}
+
+.habilidades__elemento {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    box-sizing: border-box;
+    margin-bottom: 30px;
+}
+
+.habilidades__icono {
+    width: 80px;
+    height: 80px;
+}
+
+.habilidades__nombre {
+    margin-top: 10px;
+    font-size: 18px;
+    font-weight: bold;
+    color: #333;
+}
+
+/* Sección Aficiones */
+.aficiones {
+    background-color: #fff;
+    padding: 50px 20px;
+    text-align: center;
+}
+
+.aficiones__titulo {
+    font-size: 36px;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+
+.aficiones__lista {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 30px;
+    width: auto;
+}
+
+.aficiones__elemento {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.aficiones__icono {
+    width: 80px;
+    height: 80px;
+}
+
+.aficiones__nombre {
+    margin-top: 10px;
+    font-size: 18px;
+    font-weight: bold;
+    color: #333;
+}
+
+/* Sección Formación */
+.formacion {
+    background-color: #f9f9f9;
+    padding: 50px 20px;
+    text-align: center;
+}
+
+.formacion__titulo {
+    font-size: 36px;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+
+.formacion__lista {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 30px;
+    width: auto;
+}
+
+.formacion__elemento {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.formacion__icono {
+    width: 80px;
+    height: 80px;
+}
+
+.formacion__nombre {
+    font-size: 18px;
+    font-weight: bold;
+    color: #333;
+}
+
+.formacion__detalle {
+    color: #666;
+    font-size: 16px;
+}
+
+/* Sección Proyectos */
+/* General Styles */
+
+.proyectos__titulo {
+    text-align: center; /* Centra el texto horizontalmente */
+    font-size: 2em; /* Ajusta el tamaño de fuente si es necesario */
+    margin-bottom: 20px; /* Añade margen debajo si es necesario */
+}
+.proyectos {
+    margin: 20px;
+}
+
+/* Contenedor del proyecto */
+.proyectos__item {
+    display: flex;
+    align-items: center; /* Alinea verticalmente */
+    gap: 20px; /* Espacio entre la imagen y el texto */
+    justify-content: space-between; /* Distribuye el espacio entre imagen y texto */
+}
+
+/* Item layout */
+.proyectos__item {
+    display: flex;
+    align-items: center; /* Alinea verticalmente */
+    gap: 20px; /* Espacio entre la imagen y el texto */
+}
+
+/* Imagen ocupa el 80% */
+.proyectos__imagen {
+    width: 80%; /* La imagen ocupará el 80% del ancho del contenedor */
+    height: auto; /* Mantiene la proporción de la imagen */
+    border-radius: 8px;
+    object-fit: cover;
+}
+
+.proyectos__texto {
+    width: 20%; /* El texto ocupa el 20% del ancho */
+    display: flex;
+    flex-direction: column;
+    justify-content: center; /* Centra el texto verticalmente */
+    gap: 10px; /* Espacio entre texto y botones */
+}
+
+.proyectos__nombre {
+    font-size: 1.5em;
+    margin-bottom: 10px;
+}
+
+.proyectos__descripcion {
+    font-size: 1.1em;
+    margin-bottom: 10px;
+}
 
 
-/* ------------------------------ Sección sobre mí ----------------------------------*/
+/* Botón Repositorio (borde azul y texto azul) */
+.experiencia__botao--repo {
+    padding: 10px 20px;
+    background-color: transparent; /* Fondo transparente */
+    color: #3498db; /* Texto azul */
+    border: 2px solid #3498db; /* Borde azul */
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.experiencia__botao--repo:hover {
+    background-color: #3498db; /* Fondo azul al pasar el ratón */
+    color: #fff; /* Texto blanco al pasar el ratón */
+}
+
+/* Botón Ver demo (fondo azul y texto blanco) */
+.experiencia__botao--demo {
+    padding: 10px 20px;
+    background-color: #3498db; /* Fondo azul */
+    color: #fff; /* Texto blanco */
+    border: 2px solid #3498db; /* Borde del mismo color que el fondo */
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.experiencia__botao--demo:hover {
+    background-color: #2980b9; /* Fondo azul más oscuro al pasar el ratón */
+}
 
 
-/*------------------------------ Sección de Habilidades ------------------------------*/
+@media (max-width: 768px) {
+    .proyectos__item {
+        flex-direction: column; /* Cambia el layout a vertical en pantallas pequeñas */
+        text-align: center;
+    }
+
+    .proyectos__botones {
+        justify-content: center; /* Centra los botones */
+    }
+}
 
 
-/*------------------------------ Sección de Aficiones --------------------------------*/
+/* Sección Contacto */
+.contacto {
+    background-color: #f9f9f9;
+    padding: 50px 20px;
+    text-align: center;
+}
 
+.contacto__titulo {
+    font-size: 36px;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
 
-/*------------------------------ Sección de Proyectos --------------------------------*/
+.contacto__formulario {
+    max-width: 600px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
 
+.contacto__campo {
+    padding: 15px;
+    font-size: 16px;
+    border: 1px solid #e0e0e0;
+    border-radius: 8px;
+    width: 100%;
+}
 
-/*------------------------------ Sección de Contacto ---------------------------------*/
+.contacto__campo--textarea {
+    height: 150px;
+}
 
+.contacto__boton {
+    padding: 15px;
+    background-color: #007bff;
+    color: white;
+    font-size: 18px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+}
 
-/* ------------------------------ Responsividad ---------------------------------------*/
+.contacto__boton:hover {
+    background-color: #0056b3;
+}
 
-/* Tablets y pantallas más grandes */
-@media (min-width: 768px) {
-    .cabecera {
-        flex-direction: row;
-        justify-content: space-between;
+/* Responsive Media Queries */
+
+/* Tablet */
+@media (max-width: 768px) {
+    .presentacion {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .presentacion__foto {
+        margin-bottom: 20px;
+    }
+
+    .presentacion__titulo {
+        font-size: 36px;
+    }
+
+    .habilidades__lista,
+    .aficiones__lista,
+    .formacion__lista {
+        flex-direction: column;
         align-items: center;
     }
+}
 
-    .cabecera__logo {
-        max-width: 100px;
+/* Mobile */
+@media (max-width: 480px) {
+    .presentacion__titulo {
+        font-size: 28px;
     }
 
-    .cabecera__titulo {
-        font-size: 1.5rem;
+    .presentacion__subtitulo {
+        font-size: 16px;
     }
 
-    .navegacion__lista {
-        display: flex;
-        flex-direction: row;
-        gap: 1rem;
-        margin-top: 0;
+    .redes__img {
+        font-size: 14px;
     }
 
-    .navegacion__elemento a {
-        font-size: 1rem;
+    .presentacion__foto {
+        width: 200px;
+        height: 200px;
+    }
+
+    .habilidades__icono, .aficiones__icono, .formacion__icono {
+        width: 60px;
+        height: 60px;
+    }
+
+    .habilidades__nombre, .aficiones__nombre, .formacion__nombre {
+        font-size: 16px;
     }
 }
 
-/* Pantallas grandes */
-@media (min-width: 1024px) {
-    /* Aquí puedes ajustar aún más el diseño para pantallas grandes */
-    .cabecera__titulo {
-        font-size: 1.8rem;
-    }
 
-    .navegacion__elemento a {
-        font-size: 1.1rem;
-    }
+
+/* Encriptador */
+.encriptador {
+    padding: 50px 20px;
+    background-color: #fff;
+    text-align: center;
+}
+
+.encriptador__titulo {
+    font-size: 36px;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+
+.encriptador__formulario {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    align-items: center;
+}
+
+.encriptador__input,
+.encriptador__desplazamiento {
+    width: 300px;
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #e0e0e0;
+    border-radius: 8px;
+}
+
+.encriptador__boton {
+    padding: 10px 20px;
+    font-size: 18px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+.encriptador__boton:hover {
+    background-color: #0056b3;
+}
+
+.encriptador__resultado {
+    font-size: 18px;
+}
+
+
+
+/* Pong */
+.pong {
+    padding: 50px 20px;
+    background-color: #f9f9f9;
+    text-align: center;
+}
+
+.pong__titulo {
+    font-size: 36px;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+
+#pongCanvas {
+    border: 2px solid #007bff;
+    display: block;
+    margin: 0 auto;
+}
+
+
+
+/* Formulario de Contacto */
+.formcontato {
+    padding: 40px;
+    background-color: #fff;
+}
+
+.formcontato__contacto {
+    display: flex;
+}
+
+.formcontato__text {
+    margin-left: 40px;
+}
+
+.input-container {
+    margin-bottom: 20px;
+}
+
+.formcontato__input, .formcontato__textarea {
+    width: 100%;
+    padding: 10px;
+    margin-top: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.formcontato__botao {
+    background-color: #007ACC;
+    color: white;
+    padding: 20px 20px;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+.formcontato__botao:hover {
+    background-color: #005a8c;
+}
+
+/* Footer */
+.footer {
+    padding: 20px;
+    background-color: #007ACC;
+    text-align: center;
+    color: white;
 }
